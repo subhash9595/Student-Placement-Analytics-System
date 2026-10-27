@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Placement Analytics{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+{% macro nav(endpoint, label) %}
+  <a href="{{ url_for(endpoint) }}" class="{{ 'active' if request.endpoint == endpoint else '' }}">{{ label }}</a>
+{% endmacro %}
+<nav class="sidebar" aria-label="Main">
+  <div class="brand">Placement Analytics<small>Student placement data system</small></div>
+  {{ nav('dashboard.index', 'Dashboard') }}
+  <div class="group">Records</div>
+  {{ nav('students.list_students', 'Students') }}
+  {{ nav('placements.list_placements', 'Placements') }}
+  {{ nav('placements.companies', 'Company records') }}
+  <div class="group">Analysis</div>
+  {{ nav('analytics.companies', 'Companies & salary') }}
+  {{ nav('analytics.skills', 'Skills & employability') }}
+  {{ nav('analytics.academics', 'Academics & outcomes') }}
+  {{ nav('insights.index', 'Preparation insights') }}
+  <div class="group">Data</div>
+  {{ nav('data_io.import_csv', 'Import CSV') }}
+  {{ nav('data_io.reports', 'Reports & export') }}
+</nav>
+<main class="content">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        {{ message }}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

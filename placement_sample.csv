@@ -1,0 +1,161 @@
+roll_no,name,email,department,cgpa,backlogs,aptitude_score,skills,certifications,internships,internship_details,status,company,job_role,package_lpa,recruitment_year
+CSE2018001,Aarav Singh,aarav.singh1@college.edu,CSE,7.26,0,54.0,"SQL, Java","AWS Cloud Practitioner, Azure Fundamentals",0,,shortlisted,Amazon,,,2022
+CSE2019002,Charan Patel,charan.patel2@college.edu,CSE,7.8,0,51.5,"Machine Learning, JavaScript",,1,Summer internship,eligible,,,,2023
+CSE2020003,Manoj Iyer,manoj.iyer3@college.edu,CSE,7.09,3,60.6,Java,AWS Cloud Practitioner,0,,unplaced,,,,2024
+CSE2020004,Ravi Sharma,ravi.sharma4@college.edu,CSE,6.3,0,59.9,"JavaScript, React, AWS, Java, Python",,1,Summer internship,shortlisted,TCS,,,2024
+CSE2018005,Manoj Naidu,manoj.naidu5@college.edu,CSE,6.6,2,59.8,"React, C++, AWS",Cisco CCNA,2,Summer internship,unplaced,,,,2022
+CSE2021006,Pooja Gupta,pooja.gupta6@college.edu,CSE,7.01,0,27.8,"AWS, C++, React, SQL, Python, Java",,1,Summer internship,selected,Wipro,Project Engineer,3.57,2025
+CSE2019007,Vivaan Sharma,vivaan.sharma7@college.edu,CSE,6.82,0,68.7,"Machine Learning, SQL, AWS, Java, React, Git","Google Data Analytics, Azure Fundamentals",0,,selected,Accenture,Associate Software Engineer,4.68,2023
+CSE2018008,Teja Singh,teja.singh8@college.edu,CSE,7.39,0,66.8,"Java, Git, C++, JavaScript, Machine Learning","Oracle Java SE, Azure Fundamentals",2,Summer internship,selected,Zoho,Member Technical Staff,8.88,2022
+CSE2020009,Nikhil Rao,nikhil.rao9@college.edu,CSE,7.41,0,36.7,"Git, SQL, C++",,2,Summer internship,selected,Amazon,SDE-1,30.43,2024
+CSE2020010,Suresh Naidu,suresh.naidu10@college.edu,CSE,7.1,2,66.5,"AWS, Python, JavaScript, SQL, C++",,0,,shortlisted,Zoho,,,2024
+CSE2021011,Charan Rao,charan.rao11@college.edu,CSE,9.32,1,81.3,"Machine Learning, Java, Git, JavaScript, AWS, React",Azure Fundamentals,0,,selected,Zoho,Member Technical Staff,8.76,2025
+CSE2019012,Ravi Reddy,ravi.reddy12@college.edu,CSE,6.89,0,47.6,"Machine Learning, Java, AWS, Git, Python",AWS Cloud Practitioner,1,Summer internship,shortlisted,Amazon,,,2023
+CSE2020013,Pooja Chowdary,pooja.chowdary13@college.edu,CSE,8.67,0,74.7,React,,1,Summer internship,selected,Infosys,Systems Engineer,4.61,2024
+CSE2021014,Manoj Reddy,manoj.reddy14@college.edu,CSE,6.79,0,57.0,"Java, AWS",Oracle Java SE,0,,eligible,,,,2025
+CSE2019015,Ravi Sharma,ravi.sharma15@college.edu,CSE,6.07,0,25,"React, Java, Machine Learning, Git",,1,Summer internship,eligible,,,,2023
+CSE2019016,Divya Naidu,divya.naidu16@college.edu,CSE,7.78,0,70.0,AWS,,2,Summer internship,selected,Infosys,Systems Engineer,4.17,2023
+CSE2020017,Meera Prasad,meera.prasad17@college.edu,CSE,8.82,0,49.1,Git,NPTEL Embedded Systems,1,Summer internship,eligible,,,,2024
+CSE2018018,Harini Singh,harini.singh18@college.edu,CSE,8.57,0,72.2,AWS,,1,Summer internship,selected,TCS,Systems Engineer,4.13,2022
+CSE2019019,Pooja Chowdary,pooja.chowdary19@college.edu,CSE,8.8,0,93.9,"Java, AWS",,0,,selected,TCS,Systems Engineer,3.98,2023
+CSE2018020,Pooja Sharma,pooja.sharma20@college.edu,CSE,7.26,0,63.5,"React, C++, SQL, Machine Learning, Java, Git",Oracle Java SE,2,Summer internship,selected,Amazon,SDE-1,22.25,2022
+CSE2020021,Nikhil Singh,nikhil.singh21@college.edu,CSE,8.02,0,65.9,"Java, C++, SQL",NPTEL Python,0,,eligible,,,,2024
+CSE2020022,Rohit Prasad,rohit.prasad22@college.edu,CSE,5.49,0,46.1,"Java, SQL, Machine Learning, Python, React, AWS",Oracle Java SE,1,Summer internship,unplaced,,,,2024
+CSE2018023,Vikram Kumar,vikram.kumar23@college.edu,CSE,6.88,0,46.0,Java,NPTEL Embedded Systems,0,,eligible,,,,2022
+CSE2019024,Vivaan Varma,vivaan.varma24@college.edu,CSE,7.86,0,48.9,Java,,2,Summer internship,shortlisted,Amazon,,,2023
+CSE2018025,Sneha Chowdary,sneha.chowdary25@college.edu,CSE,6.91,0,49.9,"React, Python, SQL",,1,Summer internship,eligible,,,,2022
+CSE2020026,Teja Gupta,teja.gupta26@college.edu,CSE,8.42,0,73.2,"SQL, Git",,0,,selected,Zoho,Member Technical Staff,9.72,2024
+CSE2019027,Ravi Naidu,ravi.naidu27@college.edu,CSE,7.69,0,50.7,Git,,2,Summer internship,selected,Wipro,Project Engineer,3.81,2023
+CSE2020028,Vikram Kumar,vikram.kumar28@college.edu,CSE,9.53,0,78.0,JavaScript,Cisco CCNA,1,Summer internship,selected,Amazon,SDE-1,16.08,2024
+CSE2019029,Aarav Singh,aarav.singh29@college.edu,CSE,5.0,0,25,"Git, React, Machine Learning, SQL, C++","Azure Fundamentals, AWS Cloud Practitioner",0,,unplaced,,,,2023
+CSE2020030,Sneha Prasad,sneha.prasad30@college.edu,CSE,8.97,2,66.8,"React, AWS, Machine Learning, Python, SQL, JavaScript",Oracle Java SE,0,,selected,Amazon,SDE-1,16.29,2024
+CSE2020031,Rohit Singh,rohit.singh31@college.edu,CSE,8.8,3,61.8,"AWS, Python, SQL, Git",,0,,unplaced,,,,2024
+CSE2018032,Ravi Prasad,ravi.prasad32@college.edu,CSE,7.64,0,76.5,"Java, JavaScript","Cisco CCNA, NPTEL Embedded Systems",1,Summer internship,selected,Zoho,Member Technical Staff,9.81,2022
+CSE2018033,Pooja Naidu,pooja.naidu33@college.edu,CSE,6.73,0,72.0,C++,Azure Fundamentals,1,Summer internship,eligible,,,,2022
+CSE2021034,Sai Iyer,sai.iyer34@college.edu,CSE,7.98,0,52.8,"Python, Java",NPTEL Python,0,,selected,TCS,Systems Engineer,4.1,2025
+CSE2021035,Bhavana Naidu,bhavana.naidu35@college.edu,CSE,8.15,0,73.2,"React, Machine Learning, JavaScript, AWS, Git",NPTEL Embedded Systems,2,Summer internship,selected,Deloitte,Analyst,7.35,2025
+CSE2018036,Arjun Kumar,arjun.kumar36@college.edu,CSE,6.41,3,50.7,"C++, JavaScript, AWS, Python, SQL, Java",Oracle Java SE,0,,unplaced,,,,2022
+CSE2021037,Pooja Gupta,pooja.gupta37@college.edu,CSE,7.58,0,77.0,Git,Oracle Java SE,1,Summer internship,selected,Deloitte,Analyst,8.71,2025
+CSE2019038,Sneha Iyer,sneha.iyer38@college.edu,CSE,8.12,0,74.5,"Python, React, SQL, C++",Azure Fundamentals,1,Summer internship,selected,Accenture,Associate Software Engineer,4.94,2023
+CSE2018039,Vikram Patel,vikram.patel39@college.edu,CSE,8.29,0,66.3,"SQL, Machine Learning, Java, JavaScript","AWS Cloud Practitioner, Google Data Analytics",1,Summer internship,selected,Deloitte,Analyst,6.55,2022
+CSE2018040,Aditya Prasad,aditya.prasad40@college.edu,CSE,7.93,0,51.0,"JavaScript, Git, SQL, Python",AWS Cloud Practitioner,1,Summer internship,selected,Wipro,Project Engineer,3.72,2022
+CSE2018041,Charan Rao,charan.rao41@college.edu,CSE,7.64,0,59.9,SQL,,0,,eligible,,,,2022
+CSE2021042,Rohit Sharma,rohit.sharma42@college.edu,CSE,7.13,0,63.1,"Java, SQL, Machine Learning, Python, JavaScript, React",Azure Fundamentals,1,Summer internship,selected,Deloitte,Analyst,8.82,2025
+CSE2020043,Sai Patel,sai.patel43@college.edu,CSE,5.82,0,32.2,"JavaScript, Java, Git, AWS, Python, SQL","Google Data Analytics, Cisco CCNA",0,,shortlisted,Accenture,,,2024
+CSE2020044,Ananya Naidu,ananya.naidu44@college.edu,CSE,7.48,4,54.4,"AWS, JavaScript, Machine Learning, Git, C++, React",NPTEL Embedded Systems,1,Summer internship,unplaced,,,,2024
+CSE2020045,Charan Rao,charan.rao45@college.edu,CSE,7.61,2,54.4,"Git, React, Python, C++",NPTEL Python,1,Summer internship,shortlisted,Amazon,,,2024
+IT2021046,Lakshmi Reddy,lakshmi.reddy46@college.edu,IT,6.53,0,42.5,"Git, Node.js","NPTEL Embedded Systems, NPTEL Python",1,Summer internship,eligible,,,,2025
+IT2020047,Sai Gupta,sai.gupta47@college.edu,IT,7.99,0,66.6,"CSS, Node.js, HTML","Oracle Java SE, Google Data Analytics",2,Summer internship,selected,Cognizant,Programmer Analyst,4.38,2024
+IT2018048,Diya Kumar,diya.kumar48@college.edu,IT,8.28,0,75.1,"SQL, JavaScript, Java, CSS, Node.js, MySQL","NPTEL Embedded Systems, Azure Fundamentals",1,Summer internship,selected,Capgemini,Analyst,4.3,2022
+IT2021049,Lakshmi Varma,lakshmi.varma49@college.edu,IT,6.89,0,70.9,Python,"Oracle Java SE, Cisco CCNA",2,Summer internship,selected,Cognizant,Programmer Analyst,4.7,2025
+IT2018050,Pooja Rao,pooja.rao50@college.edu,IT,7.49,0,85.0,"Java, MySQL, JavaScript, Git",,1,Summer internship,selected,Capgemini,Analyst,4.15,2022
+IT2021051,Sai Naidu,sai.naidu51@college.edu,IT,8.05,0,67.0,"JavaScript, Git, MySQL, Node.js",NPTEL Embedded Systems,1,Summer internship,selected,Accenture,Associate Software Engineer,6.42,2025
+IT2021052,Suresh Reddy,suresh.reddy52@college.edu,IT,8.71,0,67.2,"SQL, Java",,0,,selected,Zoho,Member Technical Staff,8.38,2025
+IT2019053,Karthik Rao,karthik.rao53@college.edu,IT,7.58,0,77.3,"Java, JavaScript, SQL, CSS","Cisco CCNA, NPTEL Python",0,,selected,Infosys,Systems Engineer,3.7,2023
+IT2021054,Lakshmi Sharma,lakshmi.sharma54@college.edu,IT,5.65,0,55.4,"Java, Node.js, CSS, SQL",Oracle Java SE,1,Summer internship,unplaced,,,,2025
+IT2018055,Harini Prasad,harini.prasad55@college.edu,IT,5.69,0,29.0,"HTML, Python, Node.js, Java, MySQL","AWS Cloud Practitioner, Cisco CCNA",1,Summer internship,unplaced,,,,2022
+IT2018056,Charan Iyer,charan.iyer56@college.edu,IT,6.78,0,45.1,"Node.js, Java, JavaScript, SQL",Oracle Java SE,0,,selected,Infosys,Systems Engineer,4.06,2022
+IT2021057,Meera Iyer,meera.iyer57@college.edu,IT,6.83,1,80.7,"Java, CSS, SQL, Git",,2,Summer internship,selected,TCS,Systems Engineer,4.19,2025
+IT2021058,Aarav Prasad,aarav.prasad58@college.edu,IT,6.0,0,50.3,"Node.js, Python, Java, SQL","NPTEL Python, Oracle Java SE",0,,shortlisted,TCS,,,2025
+IT2019059,Harini Gupta,harini.gupta59@college.edu,IT,6.83,0,47.0,"Python, Git, MySQL, Java, Node.js",AWS Cloud Practitioner,1,Summer internship,eligible,,,,2023
+IT2019060,Vikram Patel,vikram.patel60@college.edu,IT,7.42,0,74.4,"Node.js, SQL",NPTEL Python,2,Summer internship,shortlisted,TCS,,,2023
+IT2021061,Diya Varma,diya.varma61@college.edu,IT,6.46,0,67.5,HTML,NPTEL Embedded Systems,1,Summer internship,shortlisted,Capgemini,,,2025
+IT2021062,Ananya Gupta,ananya.gupta62@college.edu,IT,6.59,0,38.0,"JavaScript, MySQL, HTML",NPTEL Python,2,Summer internship,shortlisted,TCS,,,2025
+IT2021063,Sneha Prasad,sneha.prasad63@college.edu,IT,5.22,0,44.2,"SQL, Node.js, Python, Java, HTML, MySQL",,2,Summer internship,selected,TCS,Systems Engineer,4.25,2025
+IT2021064,Bhavana Iyer,bhavana.iyer64@college.edu,IT,8.69,1,36.4,"Git, Java, MySQL",NPTEL Embedded Systems,1,Summer internship,selected,Cognizant,Programmer Analyst,4.94,2025
+IT2020065,Diya Patel,diya.patel65@college.edu,IT,7.59,0,56.4,"HTML, JavaScript, CSS, Python, Node.js, Git",,0,,selected,TCS,Systems Engineer,3.86,2024
+IT2021066,Kavya Prasad,kavya.prasad66@college.edu,IT,7.23,0,40.6,"SQL, MySQL",,1,Summer internship,eligible,,,,2025
+IT2021067,Diya Chowdary,diya.chowdary67@college.edu,IT,7.53,0,84.7,"HTML, Node.js, SQL, CSS",,2,Summer internship,selected,Capgemini,Analyst,4.07,2025
+IT2020068,Pooja Rao,pooja.rao68@college.edu,IT,6.52,0,68.0,"HTML, JavaScript, Node.js, Git",,0,,eligible,,,,2024
+IT2020069,Diya Naidu,diya.naidu69@college.edu,IT,8.24,4,63.5,"Python, MySQL, HTML",NPTEL Embedded Systems,2,Summer internship,unplaced,,,,2024
+IT2019070,Suresh Varma,suresh.varma70@college.edu,IT,6.69,0,38.4,"SQL, Java, CSS, Git, Python, MySQL",AWS Cloud Practitioner,1,Summer internship,shortlisted,TCS,,,2023
+IT2020071,Ravi Prasad,ravi.prasad71@college.edu,IT,7.39,0,49.7,"CSS, HTML, Git, Java, SQL",NPTEL Embedded Systems,0,,selected,TCS,Systems Engineer,3.73,2024
+IT2020072,Vikram Chowdary,vikram.chowdary72@college.edu,IT,6.34,0,79.9,"CSS, Java, Git, JavaScript, Python",Azure Fundamentals,0,,selected,Zoho,Member Technical Staff,9.0,2024
+IT2021073,Vivaan Reddy,vivaan.reddy73@college.edu,IT,6.35,0,60.4,"JavaScript, Node.js, Python, HTML, CSS, SQL","NPTEL Python, Cisco CCNA",0,,selected,Capgemini,Analyst,4.12,2025
+IT2019074,Divya Chowdary,divya.chowdary74@college.edu,IT,6.94,0,48.1,"SQL, Git, JavaScript, MySQL, HTML",Azure Fundamentals,1,Summer internship,selected,Capgemini,Analyst,4.65,2023
+IT2018075,Diya Reddy,diya.reddy75@college.edu,IT,5.34,0,56.8,"JavaScript, Node.js, MySQL",,2,Summer internship,shortlisted,Zoho,,,2022
+ECE2019076,Rohit Sharma,rohit.sharma76@college.edu,ECE,7.29,0,58.6,"C, IoT, Python, SQL",,1,Summer internship,selected,TCS,Systems Engineer,4.31,2023
+ECE2019077,Aarav Kumar,aarav.kumar77@college.edu,ECE,8.01,0,48.7,"Embedded Systems, Python","AWS Cloud Practitioner, Oracle Java SE",2,Summer internship,selected,TCS,Systems Engineer,3.7,2023
+ECE2021078,Harini Sharma,harini.sharma78@college.edu,ECE,7.3,0,58.6,"C, Python, Embedded Systems",,0,,eligible,,,,2025
+ECE2020079,Vivaan Iyer,vivaan.iyer79@college.edu,ECE,7.37,0,43.3,"MATLAB, C, VLSI, Python, Embedded Systems",,1,Summer internship,eligible,,,,2024
+ECE2020080,Priya Chowdary,priya.chowdary80@college.edu,ECE,8.07,4,57.1,"C, SQL, Embedded Systems, Python",,0,,unplaced,,,,2024
+ECE2019081,Sneha Varma,sneha.varma81@college.edu,ECE,6.32,0,46.0,SQL,,2,Summer internship,eligible,,,,2023
+ECE2021082,Aditya Sharma,aditya.sharma82@college.edu,ECE,8.29,4,59.7,"Embedded Systems, IoT, SQL, MATLAB",,1,Summer internship,unplaced,,,,2025
+ECE2021083,Diya Sharma,diya.sharma83@college.edu,ECE,7.62,0,54.3,"Embedded Systems, Python, MATLAB, C, SQL, IoT",,0,,selected,Tech Mahindra,Network Engineer,4.4,2025
+ECE2018084,Pooja Naidu,pooja.naidu84@college.edu,ECE,6.22,0,51.8,"SQL, C",NPTEL Embedded Systems,1,Summer internship,shortlisted,Tech Mahindra,,,2022
+ECE2020085,Pooja Prasad,pooja.prasad85@college.edu,ECE,8.08,1,40.9,"IoT, SQL, Embedded Systems, C, VLSI",Cisco CCNA,1,Summer internship,shortlisted,TCS,,,2024
+ECE2020086,Manoj Varma,manoj.varma86@college.edu,ECE,7.91,0,72.0,C,"NPTEL Python, Google Data Analytics",0,,selected,TCS,Systems Engineer,3.93,2024
+ECE2018087,Teja Patel,teja.patel87@college.edu,ECE,7.62,0,43.6,Python,,1,Summer internship,eligible,,,,2022
+ECE2018088,Kavya Reddy,kavya.reddy88@college.edu,ECE,6.69,0,42.6,"C, Embedded Systems, VLSI, SQL, Python","Google Data Analytics, Azure Fundamentals",1,Summer internship,selected,TCS,Systems Engineer,3.96,2022
+ECE2021089,Ravi Singh,ravi.singh89@college.edu,ECE,8.25,0,64.5,"SQL, Embedded Systems",Oracle Java SE,0,,selected,Bosch,Embedded Engineer,6.6,2025
+ECE2018090,Ananya Chowdary,ananya.chowdary90@college.edu,ECE,6.78,0,46.7,"SQL, IoT, C, VLSI",,1,Summer internship,eligible,,,,2022
+ECE2021091,Sai Naidu,sai.naidu91@college.edu,ECE,6.48,0,55.1,"C, VLSI, SQL",NPTEL Python,1,Summer internship,selected,Qualcomm,Hardware Engineer,13.49,2025
+ECE2018092,Harini Singh,harini.singh92@college.edu,ECE,5.45,0,37.7,"IoT, Embedded Systems, Python",NPTEL Embedded Systems,0,,unplaced,,,,2022
+ECE2019093,Nikhil Iyer,nikhil.iyer93@college.edu,ECE,8.0,0,81.5,"SQL, Python, IoT, C, VLSI, MATLAB",,0,,selected,TCS,Systems Engineer,4.46,2023
+ECE2021094,Lakshmi Prasad,lakshmi.prasad94@college.edu,ECE,5.94,0,31.0,"MATLAB, IoT, SQL, Embedded Systems, VLSI, Python",,0,,unplaced,,,,2025
+ECE2020095,Harini Patel,harini.patel95@college.edu,ECE,7.14,0,64.2,"C, Embedded Systems, VLSI, MATLAB, SQL",,0,,selected,Qualcomm,Hardware Engineer,14.92,2024
+ECE2021096,Harini Kumar,harini.kumar96@college.edu,ECE,8.33,0,44.6,VLSI,"Cisco CCNA, NPTEL Python",0,,eligible,,,,2025
+ECE2019097,Priya Patel,priya.patel97@college.edu,ECE,8.46,3,62.2,"C, MATLAB, Python, SQL, VLSI, IoT",Azure Fundamentals,1,Summer internship,unplaced,,,,2023
+ECE2019098,Teja Kumar,teja.kumar98@college.edu,ECE,9.09,0,69.0,"IoT, Embedded Systems, C, SQL, MATLAB, Python",Oracle Java SE,1,Summer internship,selected,Tech Mahindra,Network Engineer,3.62,2023
+ECE2018099,Suresh Kumar,suresh.kumar99@college.edu,ECE,8.15,0,58.0,"VLSI, Python, MATLAB, C, IoT, Embedded Systems",NPTEL Embedded Systems,0,,selected,Tech Mahindra,Network Engineer,3.53,2022
+ECE2018100,Harini Singh,harini.singh100@college.edu,ECE,6.57,3,63.7,"Python, SQL",,0,,unplaced,,,,2022
+ECE2019101,Ravi Iyer,ravi.iyer101@college.edu,ECE,8.46,0,44.3,"SQL, MATLAB, Python","Google Data Analytics, NPTEL Python",0,,selected,Tech Mahindra,Network Engineer,4.51,2023
+ECE2019102,Diya Prasad,diya.prasad102@college.edu,ECE,7.11,0,55.2,"MATLAB, Python",NPTEL Embedded Systems,1,Summer internship,eligible,,,,2023
+ECE2019103,Meera Sharma,meera.sharma103@college.edu,ECE,9.9,0,65.9,"SQL, VLSI, MATLAB","Google Data Analytics, NPTEL Python",1,Summer internship,selected,Tech Mahindra,Network Engineer,4.81,2023
+ECE2019104,Sneha Sharma,sneha.sharma104@college.edu,ECE,7.17,0,49.2,SQL,,0,,eligible,,,,2023
+ECE2021105,Sai Gupta,sai.gupta105@college.edu,ECE,8.07,0,59.8,"C, VLSI, SQL",Azure Fundamentals,0,,selected,Qualcomm,Hardware Engineer,12.55,2025
+EEE2018106,Vikram Naidu,vikram.naidu106@college.edu,EEE,7.37,0,58.6,"AutoCAD, PLC, Excel",Azure Fundamentals,0,,shortlisted,Siemens,,,2022
+EEE2021107,Sai Iyer,sai.iyer107@college.edu,EEE,8.04,0,49.3,"AutoCAD, MATLAB, Python, Embedded Systems, PLC",,0,,shortlisted,Siemens,,,2025
+EEE2020108,Ravi Chowdary,ravi.chowdary108@college.edu,EEE,6.33,0,63.0,"Excel, PLC",Google Data Analytics,0,,eligible,,,,2024
+EEE2021109,Diya Sharma,diya.sharma109@college.edu,EEE,6.12,0,55.8,"MATLAB, Embedded Systems, Excel",NPTEL Embedded Systems,1,Summer internship,shortlisted,Siemens,,,2025
+EEE2021110,Divya Prasad,divya.prasad110@college.edu,EEE,7.31,0,54.7,"Excel, Python, PLC, MATLAB, AutoCAD","Oracle Java SE, Cisco CCNA",0,,shortlisted,Schneider Electric,,,2025
+EEE2020111,Vivaan Prasad,vivaan.prasad111@college.edu,EEE,7.62,0,64.8,"MATLAB, Python, PLC, Excel",,2,Summer internship,selected,Schneider Electric,Associate Engineer,6.42,2024
+EEE2019112,Diya Singh,diya.singh112@college.edu,EEE,6.91,0,40.3,"Python, Excel, MATLAB, PLC, Embedded Systems, AutoCAD",Google Data Analytics,0,,selected,L&T,Engineer Trainee,5.38,2023
+EEE2020113,Karthik Gupta,karthik.gupta113@college.edu,EEE,7.36,0,61.8,"Embedded Systems, PLC, Python, Excel",,0,,shortlisted,L&T,,,2024
+EEE2021114,Manoj Prasad,manoj.prasad114@college.edu,EEE,8.67,0,49.1,"Embedded Systems, AutoCAD, Python",,0,,selected,L&T,Engineer Trainee,5.03,2025
+EEE2020115,Vivaan Chowdary,vivaan.chowdary115@college.edu,EEE,7.53,4,60.8,PLC,,0,,unplaced,,,,2024
+EEE2020116,Aarav Gupta,aarav.gupta116@college.edu,EEE,9.26,0,61.1,"MATLAB, Embedded Systems, PLC, Python",Google Data Analytics,0,,selected,Siemens,Graduate Engineer Trainee,7.4,2024
+EEE2021117,Charan Iyer,charan.iyer117@college.edu,EEE,7.87,1,74.3,"Python, AutoCAD, PLC","Oracle Java SE, Cisco CCNA",2,Summer internship,selected,Siemens,Graduate Engineer Trainee,6.13,2025
+EEE2019118,Arjun Naidu,arjun.naidu118@college.edu,EEE,7.91,3,52.0,"Embedded Systems, Python, Excel, MATLAB, AutoCAD",Azure Fundamentals,0,,unplaced,,,,2023
+EEE2021119,Pooja Sharma,pooja.sharma119@college.edu,EEE,7.46,0,55.0,"AutoCAD, Embedded Systems, PLC","AWS Cloud Practitioner, NPTEL Embedded Systems",0,,eligible,,,,2025
+EEE2019120,Vivaan Sharma,vivaan.sharma120@college.edu,EEE,7.12,0,53.0,"Excel, Embedded Systems, Python, MATLAB","Cisco CCNA, Azure Fundamentals",0,,selected,L&T,Engineer Trainee,5.01,2023
+EEE2018121,Teja Chowdary,teja.chowdary121@college.edu,EEE,6.55,0,49.2,"PLC, Python, Embedded Systems, MATLAB, Excel, AutoCAD","Oracle Java SE, NPTEL Python",1,Summer internship,selected,Schneider Electric,Associate Engineer,5.46,2022
+EEE2021122,Kavya Prasad,kavya.prasad122@college.edu,EEE,7.39,0,38.9,"MATLAB, Excel, Embedded Systems, AutoCAD, PLC",,1,Summer internship,eligible,,,,2025
+EEE2019123,Arjun Varma,arjun.varma123@college.edu,EEE,9.46,0,78.4,"Python, AutoCAD, PLC, Excel, Embedded Systems, MATLAB",AWS Cloud Practitioner,1,Summer internship,selected,Siemens,Graduate Engineer Trainee,5.85,2023
+EEE2020124,Lakshmi Naidu,lakshmi.naidu124@college.edu,EEE,7.83,3,58.3,"PLC, Python, MATLAB, Excel",,1,Summer internship,unplaced,,,,2024
+EEE2019125,Divya Rao,divya.rao125@college.edu,EEE,7.6,4,61.8,"PLC, Python","Cisco CCNA, Oracle Java SE",0,,unplaced,,,,2023
+MECH2021126,Nikhil Prasad,nikhil.prasad126@college.edu,MECH,7.41,0,67.4,"SolidWorks, Python, MATLAB, Excel",,0,,selected,L&T,Engineer Trainee,5.76,2025
+MECH2018127,Meera Rao,meera.rao127@college.edu,MECH,6.18,4,50.2,"MATLAB, Python",Oracle Java SE,0,,unplaced,,,,2022
+MECH2020128,Meera Varma,meera.varma128@college.edu,MECH,7.12,0,34.6,"Python, AutoCAD, Excel",,0,,eligible,,,,2024
+MECH2019129,Kavya Gupta,kavya.gupta129@college.edu,MECH,7.42,0,49.4,"AutoCAD, Python, Excel, MATLAB, SolidWorks",Azure Fundamentals,1,Summer internship,selected,Tata Motors,Graduate Engineer Trainee,5.48,2023
+MECH2021130,Pooja Rao,pooja.rao130@college.edu,MECH,8.62,3,52.6,"Python, MATLAB, SolidWorks, AutoCAD",Oracle Java SE,1,Summer internship,unplaced,,,,2025
+MECH2019131,Manoj Chowdary,manoj.chowdary131@college.edu,MECH,7.87,0,42.5,Python,Oracle Java SE,2,Summer internship,selected,Tata Motors,Graduate Engineer Trainee,5.81,2023
+MECH2020132,Sneha Kumar,sneha.kumar132@college.edu,MECH,6.1,0,30.5,"AutoCAD, Python",,0,,eligible,,,,2024
+MECH2021133,Diya Prasad,diya.prasad133@college.edu,MECH,6.82,0,56.8,"Excel, AutoCAD, MATLAB, Python, SolidWorks","Oracle Java SE, Cisco CCNA",1,Summer internship,selected,L&T,Engineer Trainee,4.68,2025
+MECH2020134,Charan Gupta,charan.gupta134@college.edu,MECH,7.97,0,58.6,"MATLAB, Excel, AutoCAD, Python, SolidWorks","Oracle Java SE, NPTEL Python",2,Summer internship,selected,Mahindra,Engineer Trainee,5.76,2024
+MECH2020135,Lakshmi Prasad,lakshmi.prasad135@college.edu,MECH,6.26,0,49.0,"MATLAB, Python, AutoCAD, SolidWorks, Excel",NPTEL Embedded Systems,1,Summer internship,selected,Tata Motors,Graduate Engineer Trainee,5.37,2024
+MECH2019136,Sai Patel,sai.patel136@college.edu,MECH,8.05,0,54.4,"MATLAB, Python, AutoCAD, Excel, SolidWorks",,0,,selected,L&T,Engineer Trainee,4.47,2023
+MECH2021137,Nikhil Reddy,nikhil.reddy137@college.edu,MECH,6.85,0,64.7,"AutoCAD, SolidWorks",Cisco CCNA,2,Summer internship,selected,Mahindra,Engineer Trainee,4.8,2025
+MECH2020138,Aarav Rao,aarav.rao138@college.edu,MECH,7.49,1,52.9,"AutoCAD, SolidWorks, Excel, Python, MATLAB",NPTEL Embedded Systems,1,Summer internship,shortlisted,Tata Motors,,,2024
+MECH2020139,Vikram Gupta,vikram.gupta139@college.edu,MECH,6.97,3,51.4,"Python, Excel, AutoCAD, SolidWorks",NPTEL Python,1,Summer internship,unplaced,,,,2024
+MECH2018140,Divya Varma,divya.varma140@college.edu,MECH,8.34,0,62.9,"SolidWorks, Python, MATLAB, Excel, AutoCAD","Oracle Java SE, AWS Cloud Practitioner",0,,selected,Tata Motors,Graduate Engineer Trainee,6.95,2022
+MECH2019141,Teja Singh,teja.singh141@college.edu,MECH,7.51,0,57.5,"MATLAB, Python, SolidWorks, AutoCAD",Cisco CCNA,0,,selected,Mahindra,Engineer Trainee,4.4,2023
+MECH2021142,Manoj Chowdary,manoj.chowdary142@college.edu,MECH,7.59,3,52.4,"MATLAB, SolidWorks, AutoCAD",,1,Summer internship,unplaced,,,,2025
+MECH2018143,Meera Singh,meera.singh143@college.edu,MECH,6.31,2,61.8,"Python, AutoCAD","Google Data Analytics, Azure Fundamentals",1,Summer internship,unplaced,,,,2022
+MECH2021144,Harini Patel,harini.patel144@college.edu,MECH,7.16,0,48.3,"Excel, AutoCAD, MATLAB, Python, SolidWorks",,2,Summer internship,selected,Tata Motors,Graduate Engineer Trainee,5.63,2025
+MECH2018145,Vivaan Sharma,vivaan.sharma145@college.edu,MECH,7.07,0,55.7,"AutoCAD, Excel, SolidWorks",,1,Summer internship,selected,Tata Motors,Graduate Engineer Trainee,5.85,2022
+CIVIL2021146,Priya Sharma,priya.sharma146@college.edu,CIVIL,7.66,4,71.3,"Revit, Excel",Google Data Analytics,2,Summer internship,unplaced,,,,2025
+CIVIL2018147,Meera Patel,meera.patel147@college.edu,CIVIL,6.8,0,36.3,"Excel, AutoCAD, Revit, STAAD Pro, Python",,1,Summer internship,selected,Tata Projects,Site Engineer,5.09,2022
+CIVIL2018148,Ravi Naidu,ravi.naidu148@college.edu,CIVIL,7.25,2,49.2,"AutoCAD, Python",Azure Fundamentals,1,Summer internship,unplaced,,,,2022
+CIVIL2018149,Manoj Chowdary,manoj.chowdary149@college.edu,CIVIL,8.62,0,73.6,"AutoCAD, STAAD Pro, Excel, Python, Revit",NPTEL Python,1,Summer internship,selected,L&T,Site Engineer,5.63,2022
+CIVIL2018150,Manoj Kumar,manoj.kumar150@college.edu,CIVIL,9.85,0,62.2,"STAAD Pro, Excel, AutoCAD","NPTEL Python, Google Data Analytics",0,,selected,Tata Projects,Site Engineer,5.9,2022
+CIVIL2021151,Ravi Naidu,ravi.naidu151@college.edu,CIVIL,6.66,0,42.3,"Revit, Excel, Python",Google Data Analytics,0,,eligible,,,,2025
+CIVIL2019152,Ravi Rao,ravi.rao152@college.edu,CIVIL,8.54,0,60.6,Python,Google Data Analytics,1,Summer internship,shortlisted,Shapoorji Pallonji,,,2023
+CIVIL2021153,Aditya Naidu,aditya.naidu153@college.edu,CIVIL,7.82,3,77.1,Python,,0,,unplaced,,,,2025
+CIVIL2018154,Manoj Iyer,manoj.iyer154@college.edu,CIVIL,6.19,2,25,"Excel, AutoCAD, Revit",,2,Summer internship,unplaced,,,,2022
+CIVIL2020155,Manoj Iyer,manoj.iyer155@college.edu,CIVIL,8.72,0,58.3,"STAAD Pro, Excel, Python, Revit",Azure Fundamentals,1,Summer internship,selected,Shapoorji Pallonji,Engineer Trainee,4.59,2024
+CIVIL2018156,Pooja Chowdary,pooja.chowdary156@college.edu,CIVIL,8.6,0,63.3,"Revit, AutoCAD, Excel",,1,Summer internship,selected,Shapoorji Pallonji,Engineer Trainee,4.74,2022
+CIVIL2020157,Nikhil Gupta,nikhil.gupta157@college.edu,CIVIL,7.24,0,46.1,"Revit, STAAD Pro",Azure Fundamentals,1,Summer internship,shortlisted,Tata Projects,,,2024
+CIVIL2018158,Aditya Prasad,aditya.prasad158@college.edu,CIVIL,9.25,0,82.5,"STAAD Pro, Revit",,2,Summer internship,selected,Tata Projects,Site Engineer,4.07,2022
+CIVIL2020159,Teja Iyer,teja.iyer159@college.edu,CIVIL,7.51,0,58.5,"STAAD Pro, AutoCAD, Excel, Revit, Python",,1,Summer internship,selected,Tata Projects,Site Engineer,5.83,2024
+CIVIL2018160,Teja Patel,teja.patel160@college.edu,CIVIL,7.93,0,49.3,Python,Azure Fundamentals,2,Summer internship,selected,Tata Projects,Site Engineer,5.63,2022

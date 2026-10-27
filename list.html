@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Students{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+  <div><h1 class="page">Students</h1><p class="lead-sm">{{ total }} record{{ '' if total == 1 else 's' }} match the current filters.</p></div>
+  <div class="d-flex gap-2">
+    <a class="btn btn-outline-primary" href="{{ url_for('data_io.students_csv', **request.args) }}">Export filtered CSV</a>
+    <a class="btn btn-primary" href="{{ url_for('students.create') }}">Add student</a>
+  </div>
+</div>
+<form method="get" class="panel mb-3">
+  <div class="row g-2 align-items-end">
+    <div class="col-md-3"><label class="form-label" for="q">Name or roll no.</label>
+      <input class="form-control" id="q" name="q" value="{{ request.args.q or '' }}"></div>
+    <div class="col-md-2"><label class="form-label" for="department">Department</label>
+      <select class="form-select" id="department" name="department"><option value="">All</option>
+      {% for d in departments %}<option {{ 'selected' if request.args.department == d }}>{{ d }}</option>{% endfor %}</select></div>
+    <div class="col-md-2"><label class="form-label" for="status">Status</label>
+      <select class="form-select" id="status" name="status"><option value="">All</option>
+      {% for s in statuses %}<option value="{{ s }}" {{ 'selected' if request.args.status == s }}>{{ s|capitalize }}</option>{% endfor %}</select></div>
+    <div class="col-md-3"><label class="form-label" for="company">Company</label>
+      <select class="form-select" id="company" name="company"><option value="">All</option>
+      {% for c in companies %}<option {{ 'selected' if request.args.company == c }}>{{ c }}</option>{% endfor %}</select></div>
+    <div class="col-md-2"><label class="form-label" for="skill">Skill(s)</label>
+      <input class="form-control" id="skill" name="skill" placeholder="python, sql" value="{{ request.args.skill or '' }}"></div>
+    <div class="col-6 col-md-2"><label class="form-label" for="min_cgpa">Min CGPA</label>
+      <input type="number" step="0.01" class="form-control" id="min_cgpa" name="min_cgpa" value="{{ request.args.min_cgpa or '' }}"></div>
+    <div class="col-6 col-md-2"><label class="form-label" for="max_cgpa">Max CGPA</label>
+      <input type="number" step="0.01" class="form-control" id="max_cgpa" name="max_cgpa" value="{{ request.args.max_cgpa or '' }}"></div>
+    <div class="col-6 col-md-2"><label class="form-label" for="min_salary">Min package</label>
+      <input type="number" step="0.1" class="form-control" id="min_salary" name="min_salary" value="{{ request.args.min_salary or '' }}"></div>
+    <div class="col-6 col-md-2"><label class="form-label" for="max_salary">Max package</label>
+      <input type="number" step="0.1" class="form-control" id="max_salary" name="max_salary" value="{{ request.args.max_salary or '' }}"></div>
+    <div class="col-md-4 d-flex gap-2"><button class="btn btn-primary">Apply filters</button>
+      <a class="btn btn-outline-secondary" href="{{ url_for('students.list_students') }}">Clear</a></div>
+  </div>
+</form>
+<div class="panel">
+{% if students %}
+<div class="table-responsive"><table class="table align-middle">
+  <thead><tr><th>Roll no.</th><th>Name</th><th>Dept</th><th>CGPA</th><th>Skills</th><th>Status</th><th>Company</th><th>Package</th><th></th></tr></thead>
+  <tbody>
+  {% for s in students %}
+  <tr><td>{{ s.roll_no }}</td>
+    <td><a href="{{ url_for('students.detail', student_id=s.id) }}">{{ s.name }}</a></td>
+    <td>{{ s.department }}</td><td>{{ s.cgpa }}</td>
+    <td>{% for k in s.skill_list[:4] %}<span class="chip">{{ k|skill }}</span>{% endfor %}{% if s.skill_list|length > 4 %}<span class="chip">+{{ s.skill_list|length - 4 }}</span>{% endif %}</td>
+    <td><span class="st st-{{ s.status }}">{{ s.status|capitalize }}</span></td>
+    <td>{{ s.company or '-' }}</td><td>{{ s.package_lpa|lpa if s.package_lpa is not none else '-' }}</td>
+    <td class="text-end text-nowrap"><a href="{{ url_for('students.edit', student_id=s.id) }}">Edit</a></td></tr>
+  {% endfor %}
+  </tbody></table></div>
+{% if pages > 1 %}
+<nav class="mt-3" aria-label="Pages"><ul class="pagination mb-0">
+  <li class="page-item {{ 'disabled' if page == 1 }}"><a class="page-link" href="{{ page_url(page - 1) }}">Previous</a></li>
+  <li class="page-item disabled"><span class="page-link">Page {{ page }} of {{ pages }}</span></li>
+  <li class="page-item {{ 'disabled' if page == pages }}"><a class="page-link" href="{{ page_url(page + 1) }}">Next</a></li>
+</ul></nav>{% endif %}
+{% else %}
+<div class="empty">No students match these filters. Clear the filters, add a student, or import a CSV.</div>
+{% endif %}
+</div>
+{% endblock %}

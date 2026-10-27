@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Reports{% endblock %}
+{% block content %}
+<h1 class="page">Reports and export</h1>
+<p class="lead-sm">Download CSV reports built from the {{ total }} student records currently stored.</p>
+<div class="row g-3">
+  <div class="col-md-4"><div class="panel"><h2>Placement summary</h2><p class="text-muted">Overall, department, year and company statistics.</p>
+    <a class="btn btn-primary" href="{{ url_for('data_io.summary_csv') }}">Download summary.csv</a></div></div>
+  <div class="col-md-4"><div class="panel"><h2>All students</h2><p class="text-muted">Every student with their best placement outcome. Use the Students page to export a filtered subset.</p>
+    <a class="btn btn-primary" href="{{ url_for('data_io.students_csv') }}">Download students.csv</a></div></div>
+  <div class="col-md-4"><div class="panel"><h2>Preparation insights</h2><p class="text-muted">Unplaced students with gaps and recommendations.</p>
+    <a class="btn btn-primary" href="{{ url_for('data_io.unplaced_csv') }}">Download insights.csv</a></div></div>
+</div>
+{% endblock %}

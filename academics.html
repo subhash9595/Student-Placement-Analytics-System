@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Academics & outcomes{% endblock %}
+{% block content %}
+<h1 class="page">Academic performance and placement</h1>
+<p class="lead-sm">Which student attributes go together with being placed. Correlation shows association, not cause.</p>
+<div class="row g-3 mb-3">
+  <div class="col-lg-6"><div class="panel"><h2>Placement rate by CGPA range</h2><div class="chart-box"><canvas id="cgpaChart"></canvas></div></div></div>
+  <div class="col-lg-6"><div class="panel"><h2>CGPA vs aptitude score</h2><img class="img-fluid" alt="Scatter of CGPA against aptitude score" src="{{ url_for('analytics.matplotlib_chart', name='cgpa') }}"></div></div>
+</div>
+<div class="row g-3">
+  <div class="col-lg-6"><div class="panel"><h2>Correlation with being placed</h2>
+    <table class="table"><thead><tr><th>Attribute</th><th>r</th><th>Association</th></tr></thead><tbody>
+    {% for c in corr %}<tr><td>{{ c.attribute }}</td><td>{{ c.r if c.r is not none else '-' }}</td><td>{{ (c.strength ~ ' ' ~ c.direction)|trim }}</td></tr>{% endfor %}</tbody></table></div></div>
+  <div class="col-lg-6"><div class="panel"><h2>Average values: placed vs not placed</h2>
+    <table class="table"><thead><tr><th>Attribute</th><th>Placed</th><th>Not placed</th></tr></thead><tbody>
+    {% for c in comparison %}<tr><td>{{ c.attribute }}</td><td>{{ c.placed|lpa }}</td><td>{{ c.not_placed|lpa }}</td></tr>{% endfor %}</tbody></table></div></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+<script>
+const D = {{ {'ranges': ranges}|tojson }};
+barChart("cgpaChart", D.ranges.map(r=>r.range), [{label:"Placement %", data:D.ranges.map(r=>r.placement_pct), backgroundColor:COLORS.teal}],
+  {scales:{y:{beginAtZero:true, max:100}}});
+</script>
+{% endblock %}

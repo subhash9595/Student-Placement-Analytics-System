@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="empty"><h1 class="page">{{ code }}</h1><p>{{ message }}</p>
+<a class="btn btn-primary" href="{{ url_for('dashboard.index') }}">Back to dashboard</a></div>
+{% endblock %}

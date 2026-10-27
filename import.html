@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Import CSV{% endblock %}
+{% block content %}
+<h1 class="page">Import student and placement data</h1>
+<p class="lead-sm">Upload a UTF-8 CSV with one row per student. Rows that fail validation are skipped and listed below; valid rows are still imported.</p>
+<div class="row g-3">
+  <div class="col-lg-5"><form method="post" enctype="multipart/form-data" class="panel">
+    <label class="form-label" for="file">CSV file (max 5 MB)</label>
+    <input class="form-control mb-3" type="file" id="file" name="file" accept=".csv" required>
+    <button class="btn btn-primary">Validate and import</button></form></div>
+  <div class="col-lg-7"><div class="panel"><h2>Expected columns</h2>
+    <p class="mb-1"><strong>Required:</strong> roll_no, name, department, cgpa</p>
+    <p class="mb-1"><strong>Optional:</strong> email, backlogs, aptitude_score, skills, certifications, internships, internship_details</p>
+    <p class="mb-1"><strong>Placement (optional):</strong> status (eligible / shortlisted / selected / unplaced), company, job_role, package_lpa, recruitment_year</p>
+    <p class="small text-muted mb-0">Separate multiple skills with commas inside quotes, e.g. "Python, SQL". Roll numbers must be unique.
+      A sample file is in <code>sample_data/placement_sample.csv</code>.</p></div></div>
+</div>
+{% if result %}
+<div class="panel mt-3"><h2>Result: {{ result.imported }} imported, {{ result.skipped }} skipped</h2>
+{% if result.errors %}<div class="table-responsive"><table class="table"><thead><tr><th>CSV line</th><th>Field</th><th>Problem</th></tr></thead><tbody>
+  {% for e in result.errors[:200] %}<tr><td>{{ e.row }}</td><td>{{ e.field }}</td><td>{{ e.message }}</td></tr>{% endfor %}</tbody></table></div>
+  {% if result.errors|length > 200 %}<p class="small text-muted mb-0">Showing the first 200 problems.</p>{% endif %}
+{% else %}<p class="mb-0">No problems found.</p>{% endif %}</div>
+{% endif %}
+{% endblock %}

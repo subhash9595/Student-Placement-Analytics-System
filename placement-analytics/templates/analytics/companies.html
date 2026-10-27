@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Companies & salary{% endblock %}
+{% block content %}
+<h1 class="page">Company and salary analysis</h1>
+<p class="lead-sm">Who recruits the most, what they pay, and how packages spread across departments and roles.</p>
+<div class="row g-3 mb-3">
+  <div class="col-lg-6"><div class="panel"><h2>Top recruiting companies</h2><div class="chart-box"><canvas id="companyChart"></canvas></div></div></div>
+  <div class="col-lg-6"><div class="panel"><h2>Salary distribution (LPA)</h2><div class="chart-box"><canvas id="salaryChart"></canvas></div></div></div>
+</div>
+<div class="row g-3 mb-3">
+  <div class="col-lg-6"><div class="panel"><h2>Average package by department (LPA)</h2><div class="chart-box"><canvas id="deptChart"></canvas></div></div></div>
+  <div class="col-lg-6"><div class="panel"><h2>Average package by job role (LPA)</h2><div class="chart-box"><canvas id="roleChart"></canvas></div></div></div>
+</div>
+<div class="row g-3">
+  <div class="col-lg-7"><div class="panel"><h2>Top companies</h2>
+    {% if companies %}<table class="table"><thead><tr><th>Company</th><th>Hires</th><th>Average (LPA)</th><th>Highest (LPA)</th></tr></thead><tbody>
+    {% for c in companies %}<tr><td>{{ c.company }}</td><td>{{ c.hires }}</td><td>{{ c.avg_package|lpa }}</td><td>{{ c.max_package|lpa }}</td></tr>{% endfor %}</tbody></table>
+    {% else %}<p class="text-muted mb-0">No selected placements recorded yet.</p>{% endif %}</div></div>
+  <div class="col-lg-5"><div class="panel"><h2>Matplotlib view</h2><img class="img-fluid" alt="Salary histogram" src="{{ url_for('analytics.matplotlib_chart', name='salary') }}"></div></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+<script>
+const D = {{ {'companies': companies, 'salary': salary, 'roles': roles, 'departments': departments}|tojson }};
+hBarChart("companyChart", D.companies.map(c=>c.company), [{label:"Hires", data:D.companies.map(c=>c.hires), backgroundColor:COLORS.teal}]);
+barChart("salaryChart", D.salary.labels, [{label:"Students", data:D.salary.counts, backgroundColor:COLORS.saffron}]);
+barChart("deptChart", D.departments.map(d=>d.department), [{label:"Avg package", data:D.departments.map(d=>d.avg_package), backgroundColor:COLORS.teal}]);
+hBarChart("roleChart", D.roles.map(r=>r.job_role), [{label:"Avg package", data:D.roles.map(r=>r.avg_package), backgroundColor:COLORS.saffron}]);
+</script>
+{% endblock %}

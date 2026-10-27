@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Preparation insights{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap gap-2">
+  <div><h1 class="page">Placement preparation insights</h1>
+  <p class="lead-sm">Unplaced students who miss one or more criteria, most in need first.</p></div>
+  <div><a class="btn btn-outline-primary" href="{{ url_for('data_io.unplaced_csv') }}">Export CSV</a></div>
+</div>
+<div class="panel mb-3"><h2>Criteria in use</h2>
+  <span class="chip">CGPA &ge; {{ rules.min_cgpa }}</span><span class="chip">Backlogs &le; {{ rules.max_backlogs }}</span>
+  <span class="chip">Aptitude &ge; {{ rules.min_aptitude }}</span><span class="chip">Skills &ge; {{ rules.min_skills }}</span>
+  <span class="chip">Internships &ge; {{ rules.min_internships }}</span><span class="chip">Certifications &ge; {{ rules.min_certifications }}</span>
+  <span class="chip">Required: {{ rules.required_skills|map('skill')|join(', ') }}</span>
+  <div class="small text-muted mt-2">Change these in <code>config.py</code> (PREP_RULES).</div></div>
+<div class="mb-3 d-flex gap-2 flex-wrap">
+  <a class="btn btn-sm {{ 'btn-primary' if not level else 'btn-outline-primary' }}" href="{{ url_for('insights.index') }}">All</a>
+  {% for l in ['High','Medium','Low'] %}<a class="btn btn-sm {{ 'btn-primary' if level == l else 'btn-outline-primary' }}" href="{{ url_for('insights.index', need=l) }}">{{ l }} need</a>{% endfor %}
+</div>
+<div class="panel">{% if rows %}<div class="table-responsive"><table class="table align-middle">
+  <thead><tr><th>Student</th><th>Dept</th><th>Readiness</th><th>Gaps</th><th>Recommendations</th></tr></thead><tbody>
+  {% for r in rows %}<tr><td><a href="{{ url_for('students.detail', student_id=r.id) }}">{{ r.name }}</a><br><small class="text-muted">{{ r.roll_no }}</small></td>
+    <td>{{ r.department }}</td><td style="min-width:110px">{{ r.readiness }}% <small class="text-muted">({{ r.need }})</small>
+      <div class="progress mt-1"><div class="progress-bar" style="width: {{ r.readiness }}%"></div></div></td>
+    <td>{% for g in r.gaps %}<span class="chip">{{ g }}</span>{% endfor %}</td>
+    <td><ul class="mb-0 ps-3 small">{% for x in r.recommendations %}<li>{{ x }}</li>{% endfor %}</ul></td></tr>{% endfor %}
+  </tbody></table></div>
+{% else %}<div class="empty">No students to flag. Either everyone is placed, every unplaced student meets the criteria, or there is no data yet.</div>{% endif %}</div>
+{% endblock %}

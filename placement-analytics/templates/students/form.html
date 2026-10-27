@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+{% macro val(k) %}{% if s is mapping %}{{ s.get(k) if s.get(k) is not none else '' }}{% else %}{{ s[k] if s[k] is not none else '' }}{% endif %}{% endmacro %}
+<h1 class="page">{{ title }}</h1>
+<p class="lead-sm">Fields marked * are required.</p>
+<form method="post" class="panel" novalidate>
+  <div class="row g-3">
+    <div class="col-md-3"><label class="form-label" for="roll_no">Roll number *</label>
+      <input class="form-control" id="roll_no" name="roll_no" required value="{{ val('roll_no')|trim }}"></div>
+    <div class="col-md-5"><label class="form-label" for="name">Full name *</label>
+      <input class="form-control" id="name" name="name" required value="{{ val('name')|trim }}"></div>
+    <div class="col-md-4"><label class="form-label" for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" value="{{ val('email')|trim }}"></div>
+    <div class="col-md-3"><label class="form-label" for="department">Department *</label>
+      <input class="form-control" id="department" name="department" placeholder="CSE" required value="{{ val('department')|trim }}"></div>
+    <div class="col-md-3"><label class="form-label" for="cgpa">CGPA (0-10) *</label>
+      <input type="number" step="0.01" min="0" max="10" class="form-control" id="cgpa" name="cgpa" required value="{{ val('cgpa')|trim }}"></div>
+    <div class="col-md-2"><label class="form-label" for="backlogs">Backlogs</label>
+      <input type="number" min="0" class="form-control" id="backlogs" name="backlogs" value="{{ val('backlogs')|trim or 0 }}"></div>
+    <div class="col-md-2"><label class="form-label" for="aptitude_score">Aptitude (0-100)</label>
+      <input type="number" step="0.1" min="0" max="100" class="form-control" id="aptitude_score" name="aptitude_score" value="{{ val('aptitude_score')|trim }}"></div>
+    <div class="col-md-2"><label class="form-label" for="internships">Internships</label>
+      <input type="number" min="0" class="form-control" id="internships" name="internships" value="{{ val('internships')|trim or 0 }}"></div>
+    <div class="col-md-6"><label class="form-label" for="skills">Technical skills</label>
+      <input class="form-control" id="skills" name="skills" placeholder="Python, SQL, Java" value="{{ val('skills')|trim }}"></div>
+    <div class="col-md-6"><label class="form-label" for="certifications">Certifications</label>
+      <input class="form-control" id="certifications" name="certifications" placeholder="AWS Cloud Practitioner, NPTEL Python" value="{{ val('certifications')|trim }}"></div>
+    <div class="col-12"><label class="form-label" for="internship_details">Internship details</label>
+      <textarea class="form-control" id="internship_details" name="internship_details" rows="2">{{ val('internship_details')|trim }}</textarea></div>
+  </div>
+  <div class="mt-4 d-flex gap-2"><button class="btn btn-primary">Save student</button>
+    <a class="btn btn-outline-secondary" href="{{ url_for('students.list_students') }}">Cancel</a></div>
+</form>
+{% endblock %}

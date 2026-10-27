@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Placements{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap gap-2">
+  <div><h1 class="page">Placement records</h1><p class="lead-sm">{{ total }} record{{ '' if total == 1 else 's' }}{% if total > 300 %} (showing the latest 300){% endif %}.</p></div>
+  <div><a class="btn btn-primary" href="{{ url_for('placements.create') }}">Add placement record</a></div>
+</div>
+<form method="get" class="panel mb-3"><div class="row g-2 align-items-end">
+  <div class="col-md-3"><label class="form-label" for="status">Status</label><select class="form-select" id="status" name="status"><option value="">All</option>
+    {% for s in statuses %}<option value="{{ s }}" {{ 'selected' if request.args.status == s }}>{{ s|capitalize }}</option>{% endfor %}</select></div>
+  <div class="col-md-4"><label class="form-label" for="company">Company</label><select class="form-select" id="company" name="company"><option value="">All</option>
+    {% for c in companies %}<option {{ 'selected' if request.args.company == c }}>{{ c }}</option>{% endfor %}</select></div>
+  <div class="col-md-2"><label class="form-label" for="year">Year</label><select class="form-select" id="year" name="year"><option value="">All</option>
+    {% for y in years %}<option {{ 'selected' if request.args.year == y|string }}>{{ y }}</option>{% endfor %}</select></div>
+  <div class="col-md-3 d-flex gap-2"><button class="btn btn-primary">Apply filters</button><a class="btn btn-outline-secondary" href="{{ url_for('placements.list_placements') }}">Clear</a></div>
+</div></form>
+<div class="panel">{% if placements %}<div class="table-responsive"><table class="table align-middle">
+  <thead><tr><th>Student</th><th>Dept</th><th>Year</th><th>Status</th><th>Company</th><th>Role</th><th>Package (LPA)</th><th></th></tr></thead><tbody>
+  {% for p in placements %}<tr><td><a href="{{ url_for('students.detail', student_id=p.student_id) }}">{{ p.name }}</a><br><small class="text-muted">{{ p.roll_no }}</small></td>
+    <td>{{ p.department }}</td><td>{{ p.recruitment_year }}</td><td><span class="st st-{{ p.status }}">{{ p.status|capitalize }}</span></td>
+    <td>{{ p.company or '-' }}</td><td>{{ p.job_role or '-' }}</td><td>{{ p.package_lpa|lpa if p.package_lpa is not none else '-' }}</td>
+    <td class="text-end text-nowrap"><a href="{{ url_for('placements.edit', pid=p.id) }}">Edit</a>
+      <form class="d-inline" method="post" action="{{ url_for('placements.delete', pid=p.id) }}" onsubmit="return confirm('Delete this placement record?')">
+      <button class="btn btn-link btn-sm text-danger p-0 ms-2">Delete</button></form></td></tr>{% endfor %}
+  </tbody></table></div>{% else %}<div class="empty">No placement records match. Add one or import a CSV.</div>{% endif %}</div>
+{% endblock %}

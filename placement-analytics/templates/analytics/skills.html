@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Skills & employability{% endblock %}
+{% block content %}
+<h1 class="page">Skills and employability</h1>
+<p class="lead-sm">Which skills placed students hold, which combinations work best, and where unplaced students fall behind.</p>
+<div class="row g-3 mb-3">
+  <div class="col-lg-6"><div class="panel"><h2>Skill demand among placed students</h2><div class="chart-box"><canvas id="demandChart"></canvas></div></div></div>
+  <div class="col-lg-6"><div class="panel"><h2>Skill gap: placed vs unplaced (% holding the skill)</h2><div class="chart-box"><canvas id="gapChart"></canvas></div></div></div>
+</div>
+<div class="row g-3">
+  <div class="col-lg-6"><div class="panel"><h2>Skill combinations with the best outcomes</h2>
+    {% if combos %}<table class="table"><thead><tr><th>Combination</th><th>Students</th><th>Placed</th><th>Rate</th></tr></thead><tbody>
+    {% for c in combos %}<tr><td>{{ c.combo }}</td><td>{{ c.students }}</td><td>{{ c.placed }}</td><td>{{ c.placement_rate }}%</td></tr>{% endfor %}</tbody></table>
+    {% else %}<p class="text-muted mb-0">Not enough students share a skill pair yet (at least 3 are needed).</p>{% endif %}</div></div>
+  <div class="col-lg-6"><div class="panel"><h2>Skill placement rates</h2>
+    {% if demand %}<table class="table"><thead><tr><th>Skill</th><th>Students</th><th>Placed</th><th>Rate</th></tr></thead><tbody>
+    {% for d in demand %}<tr><td>{{ d.skill }}</td><td>{{ d.total }}</td><td>{{ d.placed }}</td><td>{{ d.placement_rate }}%</td></tr>{% endfor %}</tbody></table>
+    {% else %}<p class="text-muted mb-0">No skill data yet.</p>{% endif %}</div></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+<script>
+const D = {{ {'demand': demand, 'gaps': gaps}|tojson }};
+hBarChart("demandChart", D.demand.map(d=>d.skill), [{label:"Placed students with skill", data:D.demand.map(d=>d.placed), backgroundColor:COLORS.teal}]);
+hBarChart("gapChart", D.gaps.map(g=>g.skill), [
+  {label:"Placed", data:D.gaps.map(g=>g.placed_share), backgroundColor:COLORS.teal},
+  {label:"Unplaced", data:D.gaps.map(g=>g.unplaced_share), backgroundColor:COLORS.rose}]);
+</script>
+{% endblock %}

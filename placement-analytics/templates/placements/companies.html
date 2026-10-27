@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Company records{% endblock %}
+{% block content %}
+<h1 class="page">Company-wise recruitment records</h1>
+<p class="lead-sm">How many students each company has tracked at every stage.</p>
+<div class="panel">{% if rows %}<div class="table-responsive"><table class="table">
+  <thead><tr><th>Company</th><th>Eligible</th><th>Shortlisted</th><th>Selected</th><th>Unplaced</th><th>Total</th><th>Avg package (LPA)</th></tr></thead><tbody>
+  {% for r in rows %}<tr><td><a href="{{ url_for('placements.list_placements', company=r.company) }}">{{ r.company }}</a></td>
+    <td>{{ r.eligible }}</td><td>{{ r.shortlisted }}</td><td>{{ r.selected }}</td><td>{{ r.unplaced }}</td><td>{{ r.total }}</td><td>{{ r.avg_package|lpa }}</td></tr>{% endfor %}
+</tbody></table></div>{% else %}<div class="empty">No company data yet.</div>{% endif %}</div>
+{% endblock %}

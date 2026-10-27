@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="page">Placement dashboard</h1>
+<p class="lead-sm">Key indicators across all students and recruitment years.</p>
+{% if summary.total == 0 %}
+  <div class="panel empty"><p>No student records yet.</p>
+    <a class="btn btn-primary" href="{{ url_for('data_io.import_csv') }}">Import a CSV</a>
+    <a class="btn btn-outline-primary" href="{{ url_for('students.create') }}">Add a student</a></div>
+{% else %}
+<div class="row g-3 mb-3">
+  <div class="col-6 col-lg-3"><div class="kpi"><div class="v">{{ summary.total }}</div><div class="l">Total students</div></div></div>
+  <div class="col-6 col-lg-3"><div class="kpi gold"><div class="v">{{ summary.placed }}</div><div class="l">Placed students</div></div></div>
+  <div class="col-6 col-lg-3"><div class="kpi warn"><div class="v">{{ summary.unplaced }}</div><div class="l">Unplaced students</div></div></div>
+  <div class="col-6 col-lg-3"><div class="kpi"><div class="v">{{ summary.placement_pct }}%</div><div class="l">Placement percentage</div></div></div>
+</div>
+<div class="row g-3 mb-3">
+  <div class="col-6 col-lg-3"><div class="kpi"><div class="v">{{ summary.avg_package|lpa }}</div><div class="l">Average package (LPA)</div></div></div>
+  <div class="col-6 col-lg-3"><div class="kpi"><div class="v">{{ summary.median_package|lpa }}</div><div class="l">Median package (LPA)</div></div></div>
+  <div class="col-6 col-lg-3"><div class="kpi"><div class="v">{{ summary.min_package|lpa }}</div><div class="l">Minimum package (LPA)</div></div></div>
+  <div class="col-6 col-lg-3"><div class="kpi"><div class="v">{{ summary.max_package|lpa }}</div><div class="l">Maximum package (LPA)</div></div></div>
+</div>
+<div class="row g-3 mb-3">
+  <div class="col-lg-4"><div class="panel"><h2>Recruitment status</h2><div class="chart-box"><canvas id="statusChart"></canvas></div></div></div>
+  <div class="col-lg-8"><div class="panel"><h2>Department-wise placement</h2><div class="chart-box"><canvas id="deptChart"></canvas></div></div></div>
+</div>
+<div class="row g-3 mb-3">
+  <div class="col-lg-6"><div class="panel"><h2>Placement trend by year</h2><div class="chart-box"><canvas id="yearChart"></canvas></div></div></div>
+  <div class="col-lg-6"><div class="panel"><h2>Top recruiting companies</h2><div class="chart-box"><canvas id="companyChart"></canvas></div></div></div>
+</div>
+<div class="row g-3">
+  <div class="col-lg-6"><div class="panel"><h2>Salary distribution (LPA)</h2><div class="chart-box"><canvas id="salaryChart"></canvas></div></div></div>
+  <div class="col-lg-6"><div class="panel"><h2>Most demanded skills (among placed)</h2><div class="chart-box"><canvas id="skillChart"></canvas></div></div></div>
+</div>
+{% endif %}
+{% endblock %}
+{% block scripts %}
+{% if summary.total %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+<script>
+const D = {{ {'summary': summary, 'departments': departments, 'years': years, 'companies': companies, 'salary': salary, 'skills': skills}|tojson }};
+const sc = D.summary.status_counts;
+doughnutChart("statusChart", ["Selected","Shortlisted","Eligible","Unplaced"],
+  [sc.selected, sc.shortlisted, sc.eligible, sc.unplaced], [COLORS.teal, COLORS.saffron, "#6fa8dc", COLORS.rose]);
+barChart("deptChart", D.departments.map(d=>d.department), [
+  {label:"Students", data:D.departments.map(d=>d.total), backgroundColor:COLORS.slate},
+  {label:"Placed", data:D.departments.map(d=>d.placed), backgroundColor:COLORS.teal}]);
+lineChart("yearChart", D.years.map(y=>y.year), [
+  {label:"Placed students", data:D.years.map(y=>y.placed), borderColor:COLORS.teal, backgroundColor:COLORS.teal, tension:.25},
+  {label:"Avg package (LPA)", data:D.years.map(y=>y.avg_package), borderColor:COLORS.saffron, backgroundColor:COLORS.saffron, tension:.25}]);
+hBarChart("companyChart", D.companies.map(c=>c.company), [{label:"Hires", data:D.companies.map(c=>c.hires), backgroundColor:COLORS.teal}]);
+barChart("salaryChart", D.salary.labels, [{label:"Students", data:D.salary.counts, backgroundColor:COLORS.saffron}]);
+hBarChart("skillChart", D.skills.map(s=>s.skill), [{label:"Placed students with skill", data:D.skills.map(s=>s.placed), backgroundColor:COLORS.teal}]);
+</script>
+{% endif %}
+{% endblock %}

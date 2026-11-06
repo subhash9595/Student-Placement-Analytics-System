@@ -1,62 +1,82 @@
-"""Student Placement Data Analysis System - Flask application factory."""
+import streamlit as st
+import sys
 import os
 
-import click
-from flask import Flask, render_template
+sys.path.insert(0, os.path.dirname(__file__))
 
-from config import Config
-from extensions import db
-from services.utils import pretty_skill
+from database.db_manager import DBManager
+from data.generate_data import generate_data
 
+st.set_page_config(
+    page_title="Student Placement Analytics",
+    page_icon="🎓",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
-def create_app(overrides: dict | None = None) -> Flask:
-    app = Flask(__name__)
-    app.config.from_object(Config)
-    if overrides:
-        app.config.update(overrides)
-    db.init_app(app)
+@st.cache_resource
+def init_database():
+    db = DBManager()
+    if db.is_empty():
+        generate_data()
+    return db
 
-    from routes import analytics, dashboard, data_io, insights, placements, students
-    for module in (dashboard, students, placements, analytics, insights, data_io):
-        app.register_blueprint(module.bp)
+db = init_database()
 
-    app.jinja_env.filters["skill"] = pretty_skill
-    app.jinja_env.filters["lpa"] = lambda v: "-" if v is None or v != v else f"{v:.2f}"
+@st.cache_data
+def load_data():
+    return db.get_all_students()
 
-    @app.errorhandler(404)
-    def not_found(_):
-        return render_template("error.html", code=404, message="That page or record does not exist."), 404
+df = load_data()
+stats = db.get_summary_stats()
 
-    @app.errorhandler(413)
-    def too_large(_):
-        return render_template("error.html", code=413, message="The uploaded file is larger than 5 MB."), 413
+with st.sidebar:
+    st.markdown("## 🎓 Placement Analytics")
+    st.markdown("**College Dashboard System**")
+    st.divider()
+    st.markdown(f"✅ **DB Status:** {stats['total']} students loaded")
+    st.divider()
+    st.markdown("### 🔍 Global Filters")
+    years = ["All"] + sorted(df["year"].unique().tolist())
+    branches = ["All"] + sorted(df["branch"].unique().tolist())
+    sel_year = st.selectbox("Academic Year", years)
+    sel_branch = st.selectbox("Branch", branches)
+    st.session_state["sel_year"] = sel_year
+    st.session_state["sel_branch"] = sel_branch
+    st.divider()
+    st.caption("Built with Streamlit + Plotly + Scikit-learn")
 
-    @app.errorhandler(500)
-    def server_error(_):
-        return render_template("error.html", code=500,
-                               message="Something went wrong. Check the database connection and try again."), 500
+filtered_df = db.get_students_by_filter(
+    year=sel_year if sel_year != "All" else None,
+    branch=sel_branch if sel_branch != "All" else None
+)
 
-    @app.cli.command("init-db")
-    def init_db():
-        """Create all database tables."""
-        db.create_all()
-        click.echo("Tables created.")
+st.title("🎓 Student Placement Data Analysis System")
+st.markdown("#### Welcome! Use the sidebar to navigate between pages.")
+st.divider()
 
-    @app.cli.command("seed")
-    @click.option("--file", "path", default="sample_data/placement_sample.csv", show_default=True)
-    def seed(path):
-        """Load a CSV (default: the bundled sample data) into the database."""
-        from services.importer import import_dataframe, read_csv
-        with open(path, "rb") as fh:
-            result = import_dataframe(read_csv(fh))
-        click.echo(f"Imported {result['imported']} rows, skipped {result['skipped']}.")
-        for e in result["errors"][:10]:
-            click.echo(f"  row {e['row']}: {e['field']} {e['message']}")
+total = len(filtered_df)
+placed = (filtered_df["placement_status"] == "Placed").sum()
+placement_pct = round(placed / total * 100, 1) if total > 0 else 0
+avg_pkg = round(filtered_df[filtered_df["placement_status"] == "Placed"]["package_lpa"].mean(), 2) if placed > 0 else 0
+max_pkg = round(filtered_df[filtered_df["placement_status"] == "Placed"]["package_lpa"].max(), 2) if placed > 0 else 0
 
-    return app
+col1, col2, col3, col4 = st.columns(4)
+col1.metric("👨‍🎓 Total Students", f"{total:,}")
+col2.metric("✅ Placement Rate", f"{placement_pct}%")
+col3.metric("💰 Avg Package", f"{avg_pkg} LPA")
+col4.metric("🚀 Highest Package", f"{max_pkg} LPA")
 
+st.divider()
 
-app = create_app()
+import plotly.express as px
+grp = filtered_df.groupby(["year", "placement_status"]).size().reset_index(name="Count")
+fig = px.bar(grp, x="year", y="Count", color="placement_status",
+             barmode="group",
+             color_discrete_map={"Placed": "#22c55e", "Not Placed": "#ef4444"},
+             title="📊 Placement Overview by Year",
+             labels={"year": "Year", "placement_status": "Status"})
+fig.update_layout(template="plotly_white")
+st.plotly_chart(fig, use_container_width=True)
 
-if __name__ == "__main__":
-    app.run(debug=os.getenv("FLASK_DEBUG", "1") == "1")
+st.info("👈 Use the **sidebar** to explore all pages!")
